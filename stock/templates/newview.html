@@ -1,0 +1,92 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block body %}<br>
+
+<div class="row align-middle text-center">
+    <table class="mx-auto center">
+        <tr>
+            <td px-0><a class="btn btn-primary" href="/new/120" role="button">120</a>&nbsp</td>
+            <td><a class="btn btn-primary" href="/new/170" role="button">170</a>&nbsp</td>
+            <td><a class="btn btn-primary" href="/new/200" role="button">200</a>&nbsp</td>
+            <td><a class="btn btn-primary" href="/new/320" role="button">320</a>&nbsp</td>
+            <td><a class="btn  btn-primary" href="/new/420" role="button">420</a>&nbsp</td>
+            <td><a class="btn  btn-primary" href="/new/30" role="button"> &nbsp 30</a>&nbsp</td>
+            
+        </tr>
+        <tr>
+            <td><a class="btn  btn-primary" href="/new/150" role="button">150</a>&nbsp</td>
+            <td><a class="btn btn-primary" href="/new/190" role="button">190</a>&nbsp</td>
+            <td><a class="btn btn-primary" href="/new/260" role="button">260</a>&nbsp</td>
+            <td><a class="btn  btn-primary" href="/new/340" role="button">340</a>&nbsp</td>
+            <td><a class="btn  btn-primary" href="/new/48" role="button"> &nbsp 48</a>&nbsp</td>
+            <td><a class="btn  btn-primary" href="/new/25" role="button"> &nbsp 25</a>&nbsp</td>
+            
+            
+            
+            
+        </tr>
+
+</table></div>
+
+<br>
+<div class="card  text-center mx-auto"><h3 class="text-center">{{pk}} mm</h3></div>
+<div class="col">
+    <div class="col-md">
+
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+              <tr class="text-center ">
+                <th scope="col">Quantity</th>
+                <th scope="col">Feet</th>
+                <th scope="col">MM</th>
+
+                <th scope="col">Type</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for n in s %}
+              <tr class="text-center ">
+                <th scope="row">{{n.pieces}}</th>
+                <td>{{n.feet}}</td>
+                <td>{{n.mm}}</td>
+                <td>{{n.types}}</td>
+
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+</div>
+</div>
+
+</div>
+
+
+{% endblock %}
+
+
+
+
+
+  <table class="table">
+    <tr class="text-center ">
+        <th>Quantity</th>
+        <th>Feet</th>
+        <th>MM</th>
+        <th>Color</th>
+        <th>Type</th>
+        <th >Company</th>
+    </tr>
+
+    {% for n in s %}
+        <tr class="text-center">
+            <td>{{n.pieces}}</td>
+            <td>{{n.feet}}</td>
+            <td>{{n.mm}}</td>
+            <td>{{n.color}}</td> 
+             <td>{{n.types}}</td>
+             <td>{{n.company}}</td> 
+        </tr>
+    {% endfor %}
+    
+</table>

@@ -1,0 +1,70 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block body %}
+
+<br>
+<div class="card card-body">
+    <h3 class="text-center align-middle">All Products</h3>
+</div>
+<table class="table table-hover table-dark">
+    <thead>
+        <tr class="text-center align-middle">
+            <th scope="col">Feet</th>
+            <th scope="col">MM</th>
+            <th scope="col">Type</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for sale in products %}
+        <tr class="text-center align-middle">
+            
+            <td>{{sale.feet}}</td>
+            <td>{{sale.mm}}</td>
+            <td>{{sale.types}}</td>
+        </tr>
+        {% endfor %}
+    
+    </tbody>
+</table>
+
+
+{% endblock %}
+
+
+
+
+
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <h3 class="text-center align-middle">Products</h3>
+        </div>
+        <div class="card card-body">
+            <table class="table">
+                <tr>
+
+                    <th>Feet</th>
+                    <th>MM</th>
+                    <th>Type</th>
+                    <th>Company</th>
+                    <th>Color</th>
+                </tr>
+
+                {% for sale in products %}
+                <tr>
+                    <td>{{sale.feet}}</td>
+                    <td>{{sale.mm}}</td>
+                    <td>{{sale.types}}</td>
+                    <td>{{sale.color}}</td>
+                    <td>{{sale.company}}</td>
+
+
+                </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+
+</div>

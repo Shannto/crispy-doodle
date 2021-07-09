@@ -1,0 +1,60 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block body %}
+<br>
+<div class="row align-middle text-center">
+    <table class="mx-auto center">
+        <tr>
+            <td px-0><a class="btn btn-primary" href="/new/120" role="button">120</a>&nbsp</td>
+            <td><a class="btn btn-primary" href="/new/170" role="button">170</a>&nbsp</td>
+            <td><a class="btn btn-primary" href="/new/200" role="button">200</a>&nbsp</td>
+            <td><a class="btn btn-primary" href="/new/320" role="button">320</a>&nbsp</td>
+            <td><a class="btn  btn-primary" href="/new/420" role="button">420</a>&nbsp</td>
+            <td><a class="btn  btn-primary" href="/new/30" role="button"> &nbsp 30</a>&nbsp</td>
+            
+        </tr>
+        <tr>
+            <td><a class="btn  btn-primary" href="/new/150" role="button">150</a>&nbsp</td>
+            <td><a class="btn btn-primary" href="/new/190" role="button">190</a>&nbsp</td>
+            <td><a class="btn btn-primary" href="/new/260" role="button">260</a>&nbsp</td>
+            <td><a class="btn  btn-primary" href="/new/340" role="button">340</a>&nbsp</td>
+            <td><a class="btn  btn-primary" href="/new/48" role="button"> &nbsp 48</a>&nbsp</td>
+            <td><a class="btn  btn-primary" href="/new/25" role="button"> &nbsp 25</a>&nbsp</td>
+            
+            
+            
+            
+        </tr>
+
+</table></div><br>
+
+<div class="col">
+    <div class="col-md">
+        
+            <h3 class="text-center align-middle btn btn-block btn-success" ><strong>Products Quantity in Stock</strong> </h3>
+        
+        
+            <table class="table mx-auto left">
+                <tr class="text-center ">
+                    <th>Quantity</th>
+                    <th>Feet</th>
+                    <th>MM</th>
+                    <th>Type</th>
+                </tr>
+
+                {% for n in i %}
+                    <tr class="text-center">
+                        <td>{{n.pieces}}</td>
+                        <td>{{n.feet}}</td>
+                        <td>{{n.mm}}</td>
+                         <td>{{n.types}}</td>
+                    </tr>
+                {% endfor %}
+                
+            </table>
+        </div>
+    </div>
+    
+</div>
+
+{% endblock %}

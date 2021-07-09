@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>Gravity Calculator</title>
+</head>
+<body>
+<h1>Gravity Calculator</h1>
+<p>Enter the gravity below:</p>
+<form action="/sendform/" method = "post">
+    {% csrf_token %}
+    Enter Input: <br>
+    <input type="text" name="input"><br>
+    <br>
+    Your gravity is: <br>
+    <input type="text" name="output" value="{{ result }}" readonly><br>
+    <br>
+    <input type="submit" name="submit" >        
+</form>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block body %}
+
+<div class="row">
+    <div class="col-md">
+        <div class="card card-body">
+            <h3 class="text-center align-middle">History</h3>
+        </div><br>
+        <div class="card card-body table-responsive">
+            <table class="table">
+                <tr class="text-center align-middle">
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Quantity</th>
+                    <th>Feet</th>
+                    <th>MM</th>
+                    <th>Type</th>
+                </tr>
+
+                {% for sale in sales %}
+                <tr class="text-center align-middle">
+                    <td>{{sale.name}}</td>
+                    <td>{{sale.date}}</td>
+                    <td>{{sale.pieces}}</td>
+                    <td>{{sale.feet}}</td>
+                    <td>{{sale.mm}}</td>
+                    <td>{{sale.types}}</td>
+
+                </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

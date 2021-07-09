@@ -1,0 +1,35 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block body %}
+
+<div class="row">
+    <div class="card-body">
+        <div class="card card-body">
+            <h3 class="text-center align-middle">Create Order</h3>
+        </div>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ formset.management_form}}
+                {% for form in formset %}
+                {{form}}
+                <hr>
+                {% endfor %}
+            <br><input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}
+
+
+
+{{ formset.management_form}}
+                {% for form in formset %}
+                {{form}}
+                <hr>
+                {% endfor %}

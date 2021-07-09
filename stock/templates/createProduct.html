@@ -1,0 +1,33 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block body %}
+
+<div class="row">
+    <div class="card-body col-10 mx-auto">
+        <div class="card card-body">
+            <h5 class="text-center align-middle "> Create Product </h5>
+        </div><br>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <br><input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+
+    </div>
+   
+
+</div>
+
+{% endblock %}
+
+<label for="">Pieces :</label>
+            {{ form.pieces }}
+            <label for="">Feet :</label>
+            {{ form.feet }}
+            <label for="">MM :</label>
+            {{ form.mm }}
+            <label for="">Types :</label>
+            {{ form.types }}
+    
+    </div>

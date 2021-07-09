@@ -1,0 +1,59 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block body %}
+<div class="row col-10 mx-auto">
+    <div class="card-body ">
+        <div class="card card-body ">
+            <h5 class="text-center align-middle"> Stock In </h5>
+        </div><br>
+
+        <form action="" class="col-auto" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <br><input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+
+    </div>
+
+
+</div>
+
+
+
+
+
+{% endblock %}
+//
+<div class="row">
+    <div class="col">
+        <div class="card card-body">
+            <h3 class="text-center align-middle">Create ORDER</h3></div>
+            <div class="card card-body">
+            <form class="form-inline" action="" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Submit" class="btn btn-primary">
+            </form>
+
+        </div>
+</div>
+
+</div>
+//
+
+<div class="row">
+    <div class="card-body col-10 mx-auto">
+        
+            <h4 class="text-center align-middle">Create Order</h4>
+        
+
+        <form action="" method="POST" class="text-center align-middle">
+            {% csrf_token %}
+            {{ form }}
+            <br><input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+
+    </div>
+
+
+</div>

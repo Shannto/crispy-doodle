@@ -1,0 +1,67 @@
+# models.py
+from django.db import models
+
+class ValidationCode(models.Model):
+    code = models.CharField(max_length=10, unique=True)
+    creation_date = models.DateTimeField(auto_now_add=True)
+    is_validated = models.BooleanField(default=False)
+
+# views.py
+
+def save_page(request):
+
+    # contains 3 fields
+
+    form = sample_tableform(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+
+    validation_code = ValidationCode(code="random_code_here")
+    validation_code.save()
+
+    # send email with the code here    
+    #redirect to code confirmation page
+
+def valcode(request):
+
+    #contains 1 field
+
+    sub_form = confirmform(request.POST)
+    if request.method == 'POST':
+
+        if sub_form.is_valid():
+
+            try:
+                code_from_db = ValidationCode.objects.get(code=form.fields['code'])
+            except ValidationCode.DoesNotExist: 
+                # Not code matching input exist in database
+                # return some error to the user
+
+            # code exist in db, just mark it as validated
+            code_from_db.is_validated = True
+            code_from_db.save()
+
+-------------------------------------------------------------------------------
+
+            #return redirect('/')
+            #try:
+                #with transaction.atomic(): 
+                    #x=piece1  
+                    #venue=Product.objects.get(feet=feet1,mm=mm1,types=types1,#company=company1,color=color1)   
+                    #venue.pieces -= x  
+                    #venue.update()   
+     # Purchase.save() 
+            #except IntegrityError:
+                 #raise Error
+
+            #i=item.filter(mm=mm1,types=types1,feet=feet1,company=company1,color=color1)
+            #stockval =i.values('pieces')
+            #Product.objects.update(pieces = stockval['pieces']-piece1)
+            return redirect('/')
+                # how can I show the result in the redirected page?
+
+
+
+
+      #Product.objects.select_for_update().filter(feet=feet1,mm=mm1,types=types1,company=company1,color=color1).update(pieces = 10)
+

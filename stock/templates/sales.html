@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block body %}
+
+<div class="row">
+    <div class=" col-10 mx-auto card-body">
+        <div class="card card-body">
+            <h5 class="text-center align-middle"> Sales </h5>
+        </div><br>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form }}
+            <br><input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}
